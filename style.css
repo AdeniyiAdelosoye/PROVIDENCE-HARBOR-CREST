@@ -20,7 +20,7 @@ body {
 ================================= */
 
 nav {
-    min-height: 160px;
+    min-height: 175px;
 
     display: flex;
     justify-content: space-between;
@@ -38,7 +38,7 @@ nav {
 
 
 /* ==============================
-   BRAND AREA
+   DESKTOP BRAND AREA
 ================================= */
 
 .brand-area {
@@ -47,6 +47,8 @@ nav {
 
     gap: 24px;
 
+    width: 68%;
+
     min-width: 0;
 
     flex-shrink: 1;
@@ -54,12 +56,12 @@ nav {
 
 
 /* ==============================
-   LOGO IMAGE
+   DESKTOP LOGO
 ================================= */
 
 .logo-image {
-    width: 125px;
-    height: 125px;
+    width: 145px;
+    height: 145px;
 
     flex-shrink: 0;
 }
@@ -73,11 +75,11 @@ nav {
 
 
 /* ==============================
-   ANIMATION WINDOW
+   DESKTOP ANIMATION WINDOW
 ================================= */
 
 .brand-window {
-    width: 470px;
+    width: 680px;
 
     overflow: hidden;
 
@@ -188,7 +190,7 @@ nav {
 ================================= */
 
 .hero {
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 175px);
 
     display: flex;
     align-items: center;
@@ -304,7 +306,7 @@ nav {
     }
 
 
-    /* Larger mobile logo */
+    /* Mobile logo */
 
     .logo-image {
         width: 115px;
@@ -323,7 +325,7 @@ nav {
     }
 
 
-    /* Larger mobile organisation name */
+    /* Mobile organisation name */
 
     .brand-name {
         font-family: "Cormorant Garamond", Georgia, serif;
