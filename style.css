@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
     color: #14263D;
     background-color: #F7F3EA;
 }
@@ -33,6 +33,7 @@ nav {
     border-bottom: 1px solid #E5DED0;
 
     position: relative;
+    z-index: 1000;
 }
 
 
@@ -54,7 +55,7 @@ nav {
 }
 
 .logo span {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", Georgia, serif;
 
     font-size: 27px;
     font-weight: 700;
@@ -66,7 +67,7 @@ nav {
 
 
 /* ==============================
-   DESKTOP NAVIGATION LINKS
+   DESKTOP NAVIGATION
 ================================= */
 
 .nav-links {
@@ -82,7 +83,7 @@ nav {
 
     color: #14263D;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
 
     font-size: 15px;
     font-weight: 500;
@@ -103,14 +104,20 @@ nav {
     display: none;
 
     border: none;
-
     background: none;
 
     color: #14263D;
 
-    font-size: 30px;
+    font-family: Arial, sans-serif;
+
+    font-size: 40px;
+    font-weight: 400;
+
+    line-height: 1;
 
     cursor: pointer;
+
+    padding: 8px;
 }
 
 
@@ -139,7 +146,7 @@ nav {
 ================================= */
 
 .hero h1 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", Georgia, serif;
 
     font-size: 68px;
 
@@ -162,7 +169,7 @@ nav {
 ================================= */
 
 .hero p {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
 
     font-size: 18px;
 
@@ -193,7 +200,7 @@ nav {
 
     text-decoration: none;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
 
     font-size: 14px;
 
@@ -217,38 +224,43 @@ nav {
 
 @media (max-width: 768px) {
 
-    nav {
-        min-height: 105px;
+    /* Navigation */
 
+    nav {
+        min-height: 115px;
         padding: 10px 5%;
     }
 
 
-    /* Larger mobile logo */
+    /* Bigger mobile logo */
 
     .logo {
         gap: 10px;
     }
 
     .logo img {
-        width: 82px;
-        height: 82px;
+        width: 90px;
+        height: 90px;
     }
 
     .logo span {
-        font-size: 18px;
+        font-family: "Cormorant Garamond", Georgia, serif;
+
+        font-size: 20px;
+        font-weight: 700;
+
         letter-spacing: 0.8px;
     }
 
 
-    /* Hide normal navigation */
+    /* Hide desktop navigation initially */
 
     .nav-links {
         display: none;
 
         position: absolute;
 
-        top: 105px;
+        top: 115px;
         left: 0;
 
         width: 100%;
@@ -257,70 +269,98 @@ nav {
 
         gap: 0;
 
+        padding: 0;
+
         background-color: #F7F3EA;
 
         border-bottom: 1px solid #E5DED0;
 
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 
-        z-index: 1000;
+        z-index: 2000;
     }
 
 
-    /* Show menu when active */
+    /* OPEN MOBILE MENU */
 
-    .nav-links.active {
-        display: flex;
+    .nav-links.mobile-open {
+        display: flex !important;
     }
 
+
+    /* Mobile navigation items */
 
     .nav-links li {
         width: 100%;
+
+        list-style: none;
 
         text-align: center;
 
         border-bottom: 1px solid #E5DED0;
     }
 
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
 
     .nav-links li a {
         display: block;
 
-        padding: 18px;
+        width: 100%;
 
-        font-size: 16px;
+        padding: 20px;
+
+        color: #14263D;
+
+        font-family: "Montserrat", Arial, sans-serif;
+
+        font-size: 17px;
+        font-weight: 500;
+
+        text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+        color: #B08D2C;
     }
 
 
-    /* Show hamburger */
+    /* Mobile menu button */
 
     .menu-button {
         display: block;
 
-        font-size: 32px;
+        font-size: 40px;
 
-        padding: 5px;
+        min-width: 50px;
+        min-height: 50px;
     }
 
 
-    /* Hero */
+    /* Mobile hero */
 
     .hero {
-        min-height: calc(100vh - 105px);
+        min-height: calc(100vh - 115px);
 
         padding: 60px 5%;
 
         align-items: center;
     }
 
-
     .hero-content {
         max-width: 100%;
     }
 
 
+    /* Mobile heading */
+
     .hero h1 {
-        font-size: 48px;
+        font-family: "Cormorant Garamond", Georgia, serif;
+
+        font-size: 50px;
+
+        font-weight: 600;
 
         line-height: 1.05;
 
@@ -328,14 +368,22 @@ nav {
     }
 
 
+    /* Mobile body text */
+
     .hero p {
+        font-family: "Montserrat", Arial, sans-serif;
+
         font-size: 16px;
+
+        font-weight: 400;
 
         line-height: 1.7;
 
         margin-bottom: 30px;
     }
 
+
+    /* Mobile button */
 
     .hero-button {
         padding: 14px 27px;
@@ -352,16 +400,21 @@ nav {
 @media (max-width: 420px) {
 
     .logo img {
-        width: 72px;
-        height: 72px;
+        width: 80px;
+        height: 80px;
     }
 
     .logo span {
-        font-size: 15px;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+    }
+
+    .menu-button {
+        font-size: 42px;
     }
 
     .hero h1 {
-        font-size: 42px;
+        font-size: 44px;
     }
 
     .hero p {
