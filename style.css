@@ -1,0 +1,177 @@
+/* ==============================
+   GENERAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #14263D;
+    background-color: #F7F3EA;
+}
+
+
+/* ==============================
+   NAVIGATION
+================================= */
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    background-color: #F7F3EA;
+    border-bottom: 1px solid #E5DED0;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #14263D;
+    letter-spacing: 1px;
+}
+
+
+/* Navigation Links */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #14263D;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #B08D2C;
+}
+
+
+/* ==============================
+   HERO SECTION
+================================= */
+
+.hero {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7%;
+
+    background-color: #F7F3EA;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+
+/* Hero Heading */
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #14263D;
+}
+
+.hero h1 span {
+    color: #B08D2C;
+}
+
+
+/* Hero Paragraph */
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #4D5A68;
+    margin-bottom: 35px;
+}
+
+
+/* Button */
+
+.hero-button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: #B08D2C;
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 3px;
+
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #14263D;
+}
+
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero {
+        padding: 0 5%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+}
