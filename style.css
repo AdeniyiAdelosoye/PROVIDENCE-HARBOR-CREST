@@ -20,7 +20,7 @@ body {
 ================================= */
 
 nav {
-    min-height: 115px;
+    min-height: 125px;
 
     display: flex;
     justify-content: space-between;
@@ -38,31 +38,90 @@ nav {
 
 
 /* ==============================
-   LOGO
+   BRAND AREA
 ================================= */
 
-.logo {
+.brand-area {
     display: flex;
     align-items: center;
-    gap: 16px;
+
+    gap: 18px;
+
+    min-width: 0;
+
+    flex-shrink: 1;
 }
 
-.logo img {
-    width: 82px;
-    height: 82px;
+
+/* ==============================
+   LOGO IMAGE
+================================= */
+
+.logo-image {
+    width: 88px;
+    height: 88px;
+
+    flex-shrink: 0;
+}
+
+.logo-image img {
+    width: 100%;
+    height: 100%;
 
     object-fit: contain;
 }
 
-.logo span {
+
+/* ==============================
+   ANIMATION WINDOW
+================================= */
+
+.brand-window {
+    width: 410px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    flex-shrink: 1;
+}
+
+
+/* ==============================
+   ORGANISATION NAME
+================================= */
+
+.brand-name {
+    display: inline-block;
+
     font-family: "Cormorant Garamond", Georgia, serif;
 
-    font-size: 27px;
+    font-size: 34px;
     font-weight: 700;
 
     color: #14263D;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    animation: brandMarquee 8s linear infinite;
+}
+
+
+/* ==============================
+   MARQUEE ANIMATION
+================================= */
+
+@keyframes brandMarquee {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 
@@ -75,7 +134,9 @@ nav {
 
     list-style: none;
 
-    gap: 35px;
+    gap: 30px;
+
+    flex-shrink: 0;
 }
 
 .nav-links li a {
@@ -104,6 +165,7 @@ nav {
     display: none;
 
     border: none;
+
     background: none;
 
     color: #14263D;
@@ -126,7 +188,7 @@ nav {
 ================================= */
 
 .hero {
-    min-height: calc(100vh - 115px);
+    min-height: calc(100vh - 125px);
 
     display: flex;
     align-items: center;
@@ -224,43 +286,79 @@ nav {
 
 @media (max-width: 768px) {
 
-    /* Navigation */
-
     nav {
-        min-height: 115px;
+        min-height: 120px;
+
         padding: 10px 5%;
     }
 
 
-    /* Bigger mobile logo */
+    /* Mobile brand area */
 
-    .logo {
+    .brand-area {
+        width: calc(100% - 65px);
+
         gap: 10px;
+
+        min-width: 0;
     }
 
-    .logo img {
-        width: 90px;
-        height: 90px;
+
+    /* Larger mobile logo */
+
+    .logo-image {
+        width: 95px;
+        height: 95px;
     }
 
-    .logo span {
+
+    /* Mobile animation window */
+
+    .brand-window {
+        width: calc(100% - 105px);
+
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+
+    /* Mobile organisation name */
+
+    .brand-name {
         font-family: "Cormorant Garamond", Georgia, serif;
 
-        font-size: 20px;
+        font-size: 21px;
         font-weight: 700;
 
-        letter-spacing: 0.8px;
+        letter-spacing: 1px;
+
+        animation: brandMarqueeMobile 6s linear infinite;
     }
 
 
-    /* Hide desktop navigation initially */
+    /* Mobile marquee */
+
+    @keyframes brandMarqueeMobile {
+
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+    /* Hide desktop navigation */
 
     .nav-links {
         display: none;
 
         position: absolute;
 
-        top: 115px;
+        top: 120px;
         left: 0;
 
         width: 100%;
@@ -281,10 +379,10 @@ nav {
     }
 
 
-    /* OPEN MOBILE MENU */
+    /* Open mobile menu */
 
     .nav-links.mobile-open {
-        display: flex !important;
+        display: flex;
     }
 
 
@@ -292,8 +390,6 @@ nav {
 
     .nav-links li {
         width: 100%;
-
-        list-style: none;
 
         text-align: center;
 
@@ -333,15 +429,17 @@ nav {
 
         font-size: 40px;
 
-        min-width: 50px;
-        min-height: 50px;
+        min-width: 55px;
+        min-height: 55px;
+
+        flex-shrink: 0;
     }
 
 
     /* Mobile hero */
 
     .hero {
-        min-height: calc(100vh - 115px);
+        min-height: calc(100vh - 120px);
 
         padding: 60px 5%;
 
@@ -353,7 +451,7 @@ nav {
     }
 
 
-    /* Mobile heading */
+    /* Mobile hero heading */
 
     .hero h1 {
         font-family: "Cormorant Garamond", Georgia, serif;
@@ -399,14 +497,17 @@ nav {
 
 @media (max-width: 420px) {
 
-    .logo img {
-        width: 80px;
-        height: 80px;
+    .logo-image {
+        width: 85px;
+        height: 85px;
     }
 
-    .logo span {
-        font-size: 17px;
-        letter-spacing: 0.5px;
+    .brand-window {
+        width: calc(100% - 95px);
+    }
+
+    .brand-name {
+        font-size: 18px;
     }
 
     .menu-button {
