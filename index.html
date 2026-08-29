@@ -6,6 +6,11 @@
 
     <title>Providence Harbor Crest</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,17 +18,24 @@
 
     <!-- Navigation -->
     <nav>
+
         <div class="logo">
             <img src="images/PROVIDENCE HARBOR CREST.jpeg" alt="Providence Harbor Crest Logo">
             <span>PROVIDENCE HARBOR CREST</span>
         </div>
 
-        <ul>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-button" id="menuButton" aria-label="Open navigation menu">
+            ☰
+        </button>
+
     </nav>
 
 
@@ -37,8 +49,8 @@
             </h1>
 
             <p>
-                Providence Harbor Crest is built around trust, safety,
-                premium experiences, and thoughtful guidance.
+                A trusted destination for premium living, thoughtful service,
+                and experiences designed around security, comfort, and excellence.
             </p>
 
             <a href="#" class="hero-button">
@@ -48,6 +60,25 @@
         </div>
 
     </section>
+
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        menuButton.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+
+            if (navLinks.classList.contains("active")) {
+                menuButton.textContent = "✕";
+                menuButton.setAttribute("aria-label", "Close navigation menu");
+            } else {
+                menuButton.textContent = "☰";
+                menuButton.setAttribute("aria-label", "Open navigation menu");
+            }
+        });
+    </script>
 
 </body>
 </html>
