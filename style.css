@@ -1,8 +1,4 @@
 
-/* ==============================
-   GENERAL STYLES
-================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -76,7 +72,7 @@ nav {
 
 
 /* ==============================
-   DESKTOP ANIMATION WINDOW
+   DESKTOP MARQUEE WINDOW
 ================================= */
 
 .brand-window {
@@ -140,6 +136,12 @@ nav {
     gap: 30px;
 
     flex-shrink: 0;
+
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
 }
 
 .nav-links li a {
@@ -157,6 +159,90 @@ nav {
 
 .nav-links li a:hover {
     color: #B08D2C;
+}
+
+
+/* ==============================
+   CONTACT BUTTON
+================================= */
+
+.contact-button {
+    border: none;
+
+    background: none;
+
+    color: #14263D;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    transition: color 0.3s ease;
+}
+
+.contact-button:hover {
+    color: #B08D2C;
+}
+
+.dropdown-arrow {
+    margin-left: 4px;
+
+    font-size: 17px;
+}
+
+
+/* ==============================
+   CONTACT DROPDOWN
+================================= */
+
+.contact-menu {
+    position: absolute;
+
+    top: 32px;
+    right: 0;
+
+    min-width: 150px;
+
+    background-color: #F7F3EA;
+
+    border: 1px solid #E5DED0;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    display: none;
+
+    z-index: 3000;
+}
+
+.contact-menu.contact-open {
+    display: block;
+}
+
+.contact-menu a {
+    display: block;
+
+    padding: 15px 18px;
+
+    color: #14263D;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+.contact-menu a:hover {
+    color: #B08D2C;
+
+    background-color: #F0EBE0;
 }
 
 
@@ -315,7 +401,7 @@ nav {
     }
 
 
-    /* Mobile animation window */
+    /* Mobile marquee window */
 
     .brand-window {
         width: calc(100% - 127px);
@@ -427,6 +513,42 @@ nav {
     }
 
 
+    /* Mobile Contact Button */
+
+    .contact-button {
+        width: 100%;
+
+        padding: 20px;
+
+        font-size: 17px;
+    }
+
+
+    /* Mobile Contact Dropdown */
+
+    .contact-menu {
+        position: static;
+
+        width: 100%;
+
+        border: none;
+
+        border-top: 1px solid #E5DED0;
+
+        box-shadow: none;
+
+        background-color: #F2EDE3;
+    }
+
+    .contact-menu a {
+        text-align: center;
+
+        padding: 17px;
+
+        font-size: 15px;
+    }
+
+
     /* Mobile menu button */
 
     .menu-button {
@@ -496,9 +618,6 @@ nav {
 }
 
 
-/* ==============================
-   VERY SMALL PHONES
-================================= */
 
 @media (max-width: 420px) {
 
@@ -539,4 +658,3 @@ nav {
         font-size: 15px;
     }
 }
-```

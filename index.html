@@ -6,7 +6,6 @@
 
     <title>Providence Harbor Crest</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -23,7 +22,6 @@
     <!-- Navigation -->
     <nav>
 
-        <!-- Logo and animated organisation name -->
         <div class="brand-area">
 
             <div class="logo-image">
@@ -42,12 +40,43 @@
         </div>
 
 
-        <!-- Desktop Navigation -->
+        <!-- Navigation -->
         <ul class="nav-links" id="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+
+            <li>
+                <a href="#">Home</a>
+            </li>
+
+            <li>
+                <a href="#">About</a>
+            </li>
+
+            <li>
+                <a href="#">Services</a>
+            </li>
+
+            <!-- Contact Dropdown -->
+            <li class="contact-dropdown">
+
+                <button
+                    class="contact-button"
+                    id="contactButton"
+                    type="button"
+                >
+                    Contact
+                    <span class="dropdown-arrow">⌄</span>
+                </button>
+
+                <div class="contact-menu" id="contactMenu">
+
+                    <a href="mailto:providenceharborcrest@gmail.com">
+                        Email
+                    </a>
+
+                </div>
+
+            </li>
+
         </ul>
 
 
@@ -88,8 +117,13 @@
     </section>
 
 
-    <!-- Mobile Navigation Script -->
+    <!-- Navigation Script -->
     <script>
+
+        /* ==============================
+           MOBILE MENU
+        ================================= */
+
         const menuButton = document.getElementById("menuButton");
         const navLinks = document.getElementById("navLinks");
 
@@ -110,7 +144,40 @@
                     ? "Close navigation menu"
                     : "Open navigation menu"
             );
+
         });
+
+
+        /* ==============================
+           CONTACT DROPDOWN
+        ================================= */
+
+        const contactButton =
+            document.getElementById("contactButton");
+
+        const contactMenu =
+            document.getElementById("contactMenu");
+
+
+        contactButton.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            contactMenu.classList.toggle("contact-open");
+
+        });
+
+
+        /* ==============================
+           CLOSE CONTACT DROPDOWN
+        ================================= */
+
+        document.addEventListener("click", function () {
+
+            contactMenu.classList.remove("contact-open");
+
+        });
+
     </script>
 
 </body>
