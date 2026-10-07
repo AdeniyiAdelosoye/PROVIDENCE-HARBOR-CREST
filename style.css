@@ -1,3 +1,6 @@
+/* ==============================
+   GENERAL STYLES
+================================= */
 
 * {
     margin: 0;
@@ -206,7 +209,7 @@ nav {
     top: 32px;
     right: 0;
 
-    min-width: 150px;
+    min-width: 300px;
 
     background-color: #F7F3EA;
 
@@ -237,6 +240,8 @@ nav {
     font-size: 14px;
 
     white-space: nowrap;
+
+    transition: all 0.3s ease;
 }
 
 .contact-menu a:hover {
@@ -531,6 +536,8 @@ nav {
 
         width: 100%;
 
+        min-width: 0;
+
         border: none;
 
         border-top: 1px solid #E5DED0;
@@ -545,7 +552,9 @@ nav {
 
         padding: 17px;
 
-        font-size: 15px;
+        font-size: 14px;
+
+        overflow-wrap: anywhere;
     }
 
 
@@ -618,6 +627,9 @@ nav {
 }
 
 
+/* ==============================
+   VERY SMALL PHONES
+================================= */
 
 @media (max-width: 420px) {
 
