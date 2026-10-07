@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,9 +72,8 @@
                 <div class="contact-menu" id="contactMenu">
 
                     <a
+                        id="emailLink"
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=providenceharborcrest@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
                     >
                         providenceharborcrest@gmail.com
                     </a>
@@ -163,12 +163,35 @@
         const contactMenu =
             document.getElementById("contactMenu");
 
-
         contactButton.addEventListener("click", function (event) {
 
             event.stopPropagation();
 
             contactMenu.classList.toggle("contact-open");
+
+        });
+
+
+        /* ==============================
+           MOBILE EMAIL HANDLER
+        ================================= */
+
+        const emailLink =
+            document.getElementById("emailLink");
+
+        emailLink.addEventListener("click", function (event) {
+
+            const isMobile =
+                /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+            if (isMobile) {
+
+                event.preventDefault();
+
+                window.location.href =
+                    "mailto:providenceharborcrest@gmail.com";
+
+            }
 
         });
 
@@ -187,3 +210,4 @@
 
 </body>
 </html>
+```
